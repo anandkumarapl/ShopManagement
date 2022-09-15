@@ -9,10 +9,10 @@ public static Connection connect()
     try
     {
         String user="system",url="jdbc:oracle:thin:@localhost:1521:xe",password="anand";
-        DriverManager.registerDriver(new OracleDriver());
-        return DriverManager.getConnection(url, user, password);
+        DriverManager.registerDriver(new OracleDriver());//Load the database driver
+        return DriverManager.getConnection(url, user, password);//return the stored data from database
     }
-    catch(Exception ex)
+    catch(Exception ex)//runtime exception control
     {
         System.out.println(ex);
         return null;

@@ -1,4 +1,4 @@
-package org.apache.jsp.todo;
+package org.apache.jsp.Shop_0020Management;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import database.DbConnect;
 
-public final class Alluser_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class productselect_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -61,60 +61,45 @@ public final class Alluser_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <center>\n");
       out.write("        ");
 
-            PreparedStatement statement = DbConnect.connect().prepareStatement("select*from courses order by rollno desc");//A PreparedStatement is a pre-compiled SQL statement
-            ResultSet rs = statement.executeQuery();//Accesing the data from table set
-            ResultSetMetaData rsmd = rs.getMetaData();//
-            int n = rsmd.getColumnCount();//Returns the number of columns in this 
+            PreparedStatement statement = DbConnect.connect().prepareStatement("select productid,productname from products  order by productname");
+            ResultSet rs = statement.executeQuery();
+
+
         
       out.write("\n");
-      out.write("\n");
-      out.write("        <table border=\"1\">\n");
-      out.write("            <tr>\n");
-      out.write("                ");
-
-                    for (int i = 1; i <= n; i++) {
-                
-      out.write("\n");
-      out.write("                <th>");
-      out.print(rsmd.getColumnLabel(i));
-      out.write("</th>\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("                ");
-
-                    }
-
-                
-      out.write("\n");
-      out.write("            </tr>\n");
-      out.write("            ");
-    while (rs.next()) {
-      out.write("//it check ResultSet contains any values or not\n");
-      out.write("            <tr>\n");
-      out.write("                ");
-
-                    for (int i = 1; i <= n; i++) {
-                
-      out.write("\n");
-      out.write("                <th>");
-      out.print(rs.getObject(i));
-      out.write("</th>//This method will return the value of the given column \n");
-      out.write("\n");
-      out.write("\n");
-      out.write("                ");
-
-                    }
-                
-      out.write("\n");
-      out.write("            </tr>\n");
+      out.write("        <form>\n");
       out.write("            ");
 
-                }
-
-
+                String check="";
             
       out.write("\n");
-      out.write("        </table>\n");
+      out.write("            <select name=\"product\">\n");
+      out.write("                <option>Select</option>\n");
+      out.write("\n");
+      out.write("                ");
+                while (rs.next()) {
+                        String productid = "" + rs.getObject("productid");
+                        String productname = "" + rs.getObject("productname");
+                
+      out.write("\n");
+      out.write("                <option value=\"");
+      out.print(productid);
+      out.write('"');
+      out.write('>');
+      out.print(productname);
+      out.write("</option>\n");
+      out.write("                ");
+
+                    }
+                
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                Quantity<input name=\"quantity\" value=\"1\" type=\"number\" min=\"1\">\n");
+      out.write("                <input type=\"submit\" value=\"Submit\">\n");
+      out.write("<form method=\"get\">\n");
+      out.write("            </select>\n");
+      out.write("        </form>\n");
       out.write("    </center>\n");
       out.write("</body>\n");
       out.write("</html>\n");

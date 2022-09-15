@@ -1,23 +1,25 @@
+
 <%@page import="java.sql.ResultSetMetaData"%>
 <%@page import="java.sql.ResultSet"%>
-<%@page import="database.DbConnect"%>
 <%@page import="java.sql.PreparedStatement"%>
+<%@page import="database.DbConnect"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>All To Do</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+    <center>
         <%
-            PreparedStatement ps=DbConnect.connect().prepareStatement("select*from data order by rollno desc");
-            ResultSet rs=ps.executeQuery();
-            ResultSetMetaData rsmd=rs.getMetaData();
-            int n=rsmd.getColumnCount();
+            PreparedStatement statement = DbConnect.connect().prepareStatement("select * from products order by productid");
+            ResultSet rs = statement.executeQuery();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int n = rsmd.getColumnCount();
         %>
-         <table border="1">
+
+        <table border="1">
             <tr>
                 <%
                     for (int i = 1; i <= n; i++) {
@@ -47,6 +49,7 @@
 
 
             %>
-    </table>>
-    </body>
+        </table>
+    </center>
+</body>
 </html>

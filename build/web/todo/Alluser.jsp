@@ -13,10 +13,10 @@
     <body>
     <center>
         <%
-            PreparedStatement statement = DbConnect.connect().prepareStatement("select*from courses order by rollno desc");
-            ResultSet rs = statement.executeQuery();
-            ResultSetMetaData rsmd = rs.getMetaData();
-            int n = rsmd.getColumnCount();
+            PreparedStatement statement = DbConnect.connect().prepareStatement("select*from courses order by rollno desc");//A PreparedStatement is a pre-compiled SQL statement
+            ResultSet rs = statement.executeQuery();//Accesing the data from table set
+            ResultSetMetaData rsmd = rs.getMetaData();//
+            int n = rsmd.getColumnCount();//Returns the number of columns in this 
         %>
 
         <table border="1">
@@ -32,12 +32,12 @@
 
                 %>
             </tr>
-            <%    while (rs.next()) {%>
+            <%    while (rs.next()) {%>//it check ResultSet contains any values or not
             <tr>
                 <%
                     for (int i = 1; i <= n; i++) {
                 %>
-                <th><%=rs.getObject(i)%></th>
+                <th><%=rs.getObject(i)%></th>//This method will return the value of the given column 
 
 
                 <%

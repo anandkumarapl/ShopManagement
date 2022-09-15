@@ -1,4 +1,4 @@
-package org.apache.jsp.todo;
+package org.apache.jsp.Shop_0020Management;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import database.DbConnect;
 
-public final class Alluser_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class Product_0020Stock_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -61,10 +61,10 @@ public final class Alluser_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <center>\n");
       out.write("        ");
 
-            PreparedStatement statement = DbConnect.connect().prepareStatement("select*from courses order by rollno desc");//A PreparedStatement is a pre-compiled SQL statement
-            ResultSet rs = statement.executeQuery();//Accesing the data from table set
-            ResultSetMetaData rsmd = rs.getMetaData();//
-            int n = rsmd.getColumnCount();//Returns the number of columns in this 
+            PreparedStatement statement = DbConnect.connect().prepareStatement("select * from products order by productid");
+            ResultSet rs = statement.executeQuery();
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int n = rsmd.getColumnCount();
         
       out.write("\n");
       out.write("\n");
@@ -89,7 +89,7 @@ public final class Alluser_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </tr>\n");
       out.write("            ");
     while (rs.next()) {
-      out.write("//it check ResultSet contains any values or not\n");
+      out.write("\n");
       out.write("            <tr>\n");
       out.write("                ");
 
@@ -98,7 +98,7 @@ public final class Alluser_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("                <th>");
       out.print(rs.getObject(i));
-      out.write("</th>//This method will return the value of the given column \n");
+      out.write("</th>\n");
       out.write("\n");
       out.write("\n");
       out.write("                ");
