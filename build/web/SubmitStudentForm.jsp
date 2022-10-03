@@ -30,7 +30,7 @@
             ps.setString(1, name);
              ps.setString(3, age);
                     int n=ps.executeUpdate();
-                    result="Inserted " + n + " records";
+                   result="Inserted " + n + " records";
             }
             catch(Exception ex)
             {
