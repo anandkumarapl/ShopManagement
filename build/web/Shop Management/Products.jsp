@@ -1,11 +1,13 @@
 <%@page import="database.DbConnect"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="header.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <center><title>To Do App: Insert</title>
+            <%@include file="menu.jsp" %>
               <style>
       div {
         margin-bottom: 10px;
@@ -58,7 +60,6 @@
                 result=ex.getMessage();
             }
         }
-   
         %>
        
        <center>
@@ -76,7 +77,7 @@
             <input name="description" value="<%=description%>" type="text"><br>
             <label>Discount</label>
             <input name="discount" value="<%=discount%>" type="text"><br>
-            <label>Unit Of Measurement</label>
+            <label>UnitOfMeasurement</label>
             <input name="unitofmeasurement" value="<%=unitofmeasurement%>" type="text"><br>
             <label>Product Category</label>
             <input name="productcategory" value="<%=productcategory%>" type="text"><br>
@@ -88,3 +89,4 @@
     </body>
         </form>
 </html>
+<%@include file="footer.jsp" %>

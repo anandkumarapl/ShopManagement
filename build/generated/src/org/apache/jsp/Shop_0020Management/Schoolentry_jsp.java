@@ -49,6 +49,16 @@ public final class Schoolentry_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>JSP Page</title>\n");
+      out.write("         <style>\n");
+      out.write("      div {\n");
+      out.write("        margin-bottom: 10px;\n");
+      out.write("      }\n");
+      out.write("      label {\n");
+      out.write("        display: inline-block;\n");
+      out.write("        width: 150px;\n");
+      out.write("        text-align: right;\n");
+      out.write("      }\n");
+      out.write("    </style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("         ");
