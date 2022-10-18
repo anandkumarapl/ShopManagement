@@ -4,11 +4,13 @@
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="database.DbConnect"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>All To Do</title>
+
     </head>
     <body>
     <center>
@@ -50,6 +52,7 @@
 
             %>
         </table>
+        
     </center>
 </body>
 </html>

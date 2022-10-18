@@ -60,7 +60,7 @@ public final class productstock1_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("    <body>\n");
       out.write("    <center>\n");
       out.write("        \n");
-      out.write("         <h1>Product List</h1>\n");
+      out.write("         <h1>Product Stock</h1>\n");
       out.write("         \n");
       out.write("        ");
 

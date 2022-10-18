@@ -50,11 +50,13 @@ public final class purchaseitem_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>PurchaseItems</title>\n");
+      out.write("\n");
       out.write("         <style>\n");
       out.write("      div {\n");
       out.write("        margin-bottom: 10px;\n");
@@ -134,7 +136,7 @@ public final class purchaseitem_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                \n");
       out.write("            </select>\n");
       out.write("    </body>\n");
-      out.write("</html>");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

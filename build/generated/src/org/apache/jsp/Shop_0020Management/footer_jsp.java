@@ -48,7 +48,8 @@ public final class footer_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  left: 0;\n");
       out.write("  bottom: 0;\n");
       out.write("  width: 100%;\n");
-      out.write("  background-color: orchid;\n");
+      out.write("  height: 50px;\n");
+      out.write("  background-color: red;\n");
       out.write("  color: white;\n");
       out.write("  text-align: center;\n");
       out.write("}\n");
@@ -56,11 +57,12 @@ public final class footer_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write(" \n");
       out.write("<div class=\"footer\">\n");
       out.write("  <p>Footer </p>\n");
-      out.write("  \n");
+      out.write("  <br>\n");
+      out.write("Footer Content\n");
       out.write("\n");
+      out.write("<a href=\"Allproduct.jsp\">All Products</a>\n");
       out.write("</div>\n");
       out.write("</div>\n");
-      out.write("\n");
       out.write("\n");
       out.write("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3\" crossorigin=\"anonymous\"></script>\n");
       out.write("\n");

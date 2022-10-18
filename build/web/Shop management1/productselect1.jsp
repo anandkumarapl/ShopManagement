@@ -1,4 +1,3 @@
-
 <%@page import="java.sql.ResultSetMetaData"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -44,11 +43,12 @@
                 {
                     try{                       
                   
-                    String productid=request.getParameter("productid");
+                    String productid=request.getParameter("product");
                     String quantity=request.getParameter("quantity");
+                    System.out.println(quantity);
                     PreparedStatement ps=DbConnect.connect().prepareStatement("insert into productstock values(?,?)");
-                    ps.setString(2, productid);
-                    ps.setString(1, quantity);
+                    ps.setString(1, productid);
+                    ps.setString(2, quantity);
                     int n=ps.executeUpdate();
                     result="Inserted " + n + " records";
                     }
@@ -63,6 +63,7 @@
             PreparedStatement ps = DbConnect.connect().prepareStatement("select * from productstock ");
                 rs=ps.executeQuery();
         %>
+       <h1> <%=result%><h1>
         <table border="1">
             <tr><th>Product id</th><th>Product Quantity</th></tr>
             <%
@@ -75,7 +76,7 @@
             <%
                 }
             %>
-           
+        </table>
         </form>
     </center>
 </body>

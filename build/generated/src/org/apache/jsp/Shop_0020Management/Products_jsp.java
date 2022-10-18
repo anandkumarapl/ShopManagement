@@ -65,8 +65,8 @@ public final class Products_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <center><title>To Do App: Insert</title>\n");
-      out.write("            ");
+      out.write("    <center><title>To Do App: Insert</title>\n");
+      out.write("        ");
       out.write("<div>\n");
       out.write("    <nav class=\"navbar navbar-expand-lg bg-light\">\n");
       out.write("  <div class=\"container-fluid\">\n");
@@ -103,10 +103,10 @@ public final class Products_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("          <ul class=\"dropdown-menu\">\n");
       out.write("              \n");
       out.write("            <li><a class=\"dropdown-item\" href=\"Products.jsp\">Products</a></li>\n");
-      out.write("            <li><a class=\"dropdown-item\" href=\"productlist.jsp\">Product List</a></li>\n");
-      out.write("            <li><a class=\"dropdown-item\" href=\"#\">Product Select</a></li>\n");
-      out.write("            <li><a class=\"dropdown-item\" href=\"#\">Purchase item</a></li>\n");
-      out.write("            <li><a class=\"dropdown-item\" href=\"#\">salse2</a></li>\n");
+      out.write("            <li><a class=\"dropdown-item\" href=\"productselect.jsp\">Product Select</a></li>\n");
+      out.write("            <li><a class=\"dropdown-item\" href=\"purchase.jsp\">Purchase</a></li>\n");
+      out.write("            <li><a class=\"dropdown-item\" href=\"#\"></a></li>\n");
+      out.write("            <li><a class=\"dropdown-item\" href=\"#\"></a></li>\n");
       out.write("            <li><a class=\"dropdown-item\" href=\"#\"></a></li> \n");
       out.write("            \n");
       out.write("            \n");
@@ -125,63 +125,60 @@ public final class Products_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</div>\n");
       out.write("    \n");
       out.write("\n");
-      out.write("              <style>\n");
-      out.write("      div {\n");
-      out.write("        margin-bottom: 10px;\n");
-      out.write("      }\n");
-      out.write("      label {\n");
-      out.write("        display: inline-block;\n");
-      out.write("        width: 150px;\n");
-      out.write("        text-align: right;\n");
-      out.write("      }\n");
-      out.write("    </style>\n");
+      out.write("        <style>\n");
+      out.write("            div {\n");
+      out.write("                margin-bottom: 10px;\n");
+      out.write("            }\n");
+      out.write("            label {\n");
+      out.write("                display: inline-block;\n");
+      out.write("                width: 150px;\n");
+      out.write("                text-align: right;\n");
+      out.write("            }\n");
+      out.write("        </style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
-      out.write("       \n");
+      out.write("\n");
       out.write("        ");
 
-        String check=request.getParameter("check");
-       boolean ispostback;
-        if(check==null)
-        ispostback=false;
-        else
-        ispostback=true;
-        String productid="",productname="",price="",description="",discount="",unitofmeasurement="",productcategory="",result="";
-        System.out.println(ispostback);
-       
-        if(ispostback)
-        {
-            try
-            {
-            productid=request.getParameter("productid");
-            productname=request.getParameter("productname");
-             price=request.getParameter("price");
-              description=request.getParameter("description");
-              discount=request.getParameter("discount");
-              unitofmeasurement=request.getParameter("unitofmeasurement");
-              productcategory=request.getParameter("productcategory");
-            PreparedStatement ps=DbConnect.connect().prepareStatement("insert into products values(?,?,?,?,?,?,?)");
-          //ps.setString(1,Sno);
-            ps.setString(1, productid);
-             ps.setString(2, productname);
-               ps.setString(3, price);
-                ps.setString(4, description);
-                 ps.setString(5, discount);
-                  ps.setString(6, unitofmeasurement);
-                   ps.setString(7, productcategory);
-                    int n=ps.executeUpdate();
-                    result="Inserted " + n + " records";
+            String check = request.getParameter("check");
+            boolean ispostback;
+            if (check == null) {
+                ispostback = false;
+            } else {
+                ispostback = true;
             }
-            catch(Exception ex)
-            {
-                System.out.println(ex);
-                result=ex.getMessage();
+            String productid = "", productname = "", price = "", description = "", discount = "", unitofmeasurement = "", productcategory = "", result = "";
+            System.out.println(ispostback);
+
+            if (ispostback) {
+                try {
+                    productid = request.getParameter("productid");
+                    productname = request.getParameter("productname");
+                    price = request.getParameter("price");
+                    description = request.getParameter("description");
+                    discount = request.getParameter("discount");
+                    unitofmeasurement = request.getParameter("unitofmeasurement");
+                    productcategory = request.getParameter("productcategory");
+                    PreparedStatement ps = DbConnect.connect().prepareStatement("insert into products values(?,?,?,?,?,?,?)");
+                    //ps.setString(1,Sno);
+                    ps.setString(1, productid);
+                    ps.setString(2, productname);
+                    ps.setString(3, price);
+                    ps.setString(4, description);
+                    ps.setString(5, discount);
+                    ps.setString(6, unitofmeasurement);
+                    ps.setString(7, productcategory);
+                    int n = ps.executeUpdate();
+                    result = "Inserted " + n + " records";
+                } catch (Exception ex) {
+                    System.out.println(ex);
+                    result = ex.getMessage();
+                }
             }
-        }
         
       out.write("\n");
-      out.write("       \n");
-      out.write("       <center>\n");
+      out.write("\n");
+      out.write("    <center>\n");
       out.write("        <h1>Shop Management</h1>\n");
       out.write("        <form>\n");
       out.write("            <h3>");
@@ -216,28 +213,39 @@ public final class Products_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <input name=\"productcategory\" value=\"");
       out.print(productcategory);
       out.write("\" type=\"text\"><br>\n");
-      out.write("        <br>\n");
-      out.write("        <br>\n");
-      out.write("        <label> </label>\n");
-      out.write("        <input type=\"submit\">\n");
-      out.write("        </center>\n");
-      out.write("    </body>\n");
+      out.write("            <br>\n");
+      out.write("            <br>\n");
+      out.write("            <label> </label>\n");
+      out.write("            <input type=\"submit\">\n");
+      out.write("            </center>\n");
+      out.write("            </body>\n");
       out.write("        </form>\n");
-      out.write("</html>\n");
+      out.write("        <iframe style=\"width: 100%; border-style: none;height: 500px;\" src=\"productstock.jsp\"></iframe>\n");
+      out.write("\n");
+      out.write("        </html>\n");
+      out.write("        ");
       out.write("<div>\n");
       out.write("    <style>\n");
-      out.write("\n");
+      out.write(".footer {\n");
+      out.write("  position: fixed;\n");
+      out.write("  left: 0;\n");
+      out.write("  bottom: 0;\n");
+      out.write("  width: 100%;\n");
+      out.write("  height: 50px;\n");
+      out.write("  background-color: red;\n");
+      out.write("  color: white;\n");
+      out.write("  text-align: center;\n");
+      out.write("}\n");
       out.write("</style>\n");
       out.write(" \n");
       out.write("<div class=\"footer\">\n");
       out.write("  <p>Footer </p>\n");
-      out.write("  \n");
+      out.write("  <br>\n");
       out.write("Footer Content\n");
-      out.write("<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>\n");
+      out.write("\n");
       out.write("<a href=\"Allproduct.jsp\">All Products</a>\n");
       out.write("</div>\n");
       out.write("</div>\n");
-      out.write("\n");
       out.write("\n");
       out.write("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3\" crossorigin=\"anonymous\"></script>\n");
       out.write("\n");

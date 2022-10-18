@@ -50,7 +50,6 @@ public final class productselect1_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
@@ -105,11 +104,12 @@ while (rs.next()) {
                 {
                     try{                       
                   
-                    String productid=request.getParameter("productid");
+                    String productid=request.getParameter("product");
                     String quantity=request.getParameter("quantity");
+                    System.out.println(quantity);
                     PreparedStatement ps=DbConnect.connect().prepareStatement("insert into productstock values(?,?)");
-                    ps.setString(2, productid);
-                    ps.setString(1, quantity);
+                    ps.setString(1, productid);
+                    ps.setString(2, quantity);
                     int n=ps.executeUpdate();
                     result="Inserted " + n + " records";
                     }
@@ -127,6 +127,9 @@ while (rs.next()) {
                 rs=ps.executeQuery();
         
       out.write("\n");
+      out.write("       <h1> ");
+      out.print(result);
+      out.write("<h1>\n");
       out.write("        <table border=\"1\">\n");
       out.write("            <tr><th>Product id</th><th>Product Quantity</th></tr>\n");
       out.write("            ");
@@ -147,7 +150,7 @@ while (rs.next()) {
                 }
             
       out.write("\n");
-      out.write("           \n");
+      out.write("        </table>\n");
       out.write("        </form>\n");
       out.write("    </center>\n");
       out.write("</body>\n");

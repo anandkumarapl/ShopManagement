@@ -34,10 +34,10 @@
           <ul class="dropdown-menu">
               
             <li><a class="dropdown-item" href="Products.jsp">Products</a></li>
-            <li><a class="dropdown-item" href="productlist.jsp">Product List</a></li>
-            <li><a class="dropdown-item" href="#">Product Select</a></li>
-            <li><a class="dropdown-item" href="#">Purchase item</a></li>
-            <li><a class="dropdown-item" href="#">salse2</a></li>
+            <li><a class="dropdown-item" href="productselect.jsp">Product Select</a></li>
+            <li><a class="dropdown-item" href="purchase.jsp">Purchase</a></li>
+            <li><a class="dropdown-item" href="#"></a></li>
+            <li><a class="dropdown-item" href="#"></a></li>
             <li><a class="dropdown-item" href="#"></a></li> 
             
             

@@ -77,10 +77,10 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("          <ul class=\"dropdown-menu\">\n");
       out.write("              \n");
       out.write("            <li><a class=\"dropdown-item\" href=\"Products.jsp\">Products</a></li>\n");
-      out.write("            <li><a class=\"dropdown-item\" href=\"productlist.jsp\">Product List</a></li>\n");
-      out.write("            <li><a class=\"dropdown-item\" href=\"#\">Product Select</a></li>\n");
-      out.write("            <li><a class=\"dropdown-item\" href=\"#\">Purchase item</a></li>\n");
-      out.write("            <li><a class=\"dropdown-item\" href=\"#\">salse2</a></li>\n");
+      out.write("            <li><a class=\"dropdown-item\" href=\"productselect.jsp\">Product Select</a></li>\n");
+      out.write("            <li><a class=\"dropdown-item\" href=\"purchase.jsp\">Purchase</a></li>\n");
+      out.write("            <li><a class=\"dropdown-item\" href=\"#\"></a></li>\n");
+      out.write("            <li><a class=\"dropdown-item\" href=\"#\"></a></li>\n");
       out.write("            <li><a class=\"dropdown-item\" href=\"#\"></a></li> \n");
       out.write("            \n");
       out.write("            \n");

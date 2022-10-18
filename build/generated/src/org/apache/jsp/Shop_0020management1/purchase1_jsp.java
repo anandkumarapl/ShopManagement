@@ -98,7 +98,7 @@ public final class purchase1_jsp extends org.apache.jasper.runtime.HttpJspBase
                     int n = ps.executeUpdate();
                     result = "Inserted " + " records";
                     String newreceiptno=SelectBoxes.getNewReceiptId();
-                    response.sendRedirect("purchaseIteams.jsp?receiptno=" + newreceiptno);
+                    response.sendRedirect("purchaseitem1.jsp?receiptno=" + newreceiptno);
                 } catch (Exception ex) {
                     System.out.println(ex);
                     result = ex.getMessage();

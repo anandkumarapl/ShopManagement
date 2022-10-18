@@ -33,16 +33,16 @@
             } else {
                 ispostback = true;
             }
-            String   productid = "", quantity = "", price = "", result = "";
+            String   productid = "", quantity = "", price = "",result = "";
             System.out.println(ispostback);
             if (ispostback) {
                 try {
                     
                     receiptno = request.getParameter("reciptno");
-                    productid = request.getParameter("productid");
+                    productid = request.getParameter("product");
                     quantity = request.getParameter("quantity");
                     price = request.getParameter("price");
-                    PreparedStatement ps = database.DbConnect.connect().prepareStatement("insert into PurchaseItems values(?,productseq.nextval,?,?,?)");
+                    PreparedStatement ps = database.DbConnect.connect().prepareStatement("insert into purchaseitems values(?,productseq.nextval,?,?,?)");
                     //ps.setString(1, entryno);
                     ps.setString(1, receiptno);
                     ps.setString(2, productid);

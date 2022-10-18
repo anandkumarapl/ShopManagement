@@ -6,7 +6,7 @@
         <%@include file="menu.jsp" %>
         <div>
             Content
-            
+            <h1>New Content in Content</h1>
         </div>
        
         

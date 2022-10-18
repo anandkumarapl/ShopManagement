@@ -51,11 +51,13 @@ public final class productstock_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>All To Do</title>\n");
+      out.write("\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("    <center>\n");
@@ -115,6 +117,7 @@ public final class productstock_jsp extends org.apache.jasper.runtime.HttpJspBas
             
       out.write("\n");
       out.write("        </table>\n");
+      out.write("        \n");
       out.write("    </center>\n");
       out.write("</body>\n");
       out.write("</html>\n");
