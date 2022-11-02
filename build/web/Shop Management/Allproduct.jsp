@@ -12,9 +12,9 @@
     </head>
     <body>
     <center>
-        <h1>All Producrt</h1>
+        <h1>All Product</h1>
         <%
-            PreparedStatement ps = DbConnect.connect().prepareStatement("select * from productstock order by productid");
+            PreparedStatement ps = DbConnect.connect().prepareStatement("select productname, quantity from productstock st join products p on st.productid = p.productid order by productname ");
             ResultSet rs = ps.executeQuery();
         %>
         <table border="1">
@@ -24,10 +24,10 @@
 
             <%
                 while (rs.next()) {
-                    String productid = "" + rs.getObject("productid");
+                    String productid = "" + rs.getObject("productname");
                     String quantity = "" + rs.getObject("quantity");
             %>
-            <tr><td><%=productid%></td><td><a href="Allproduct.jsp?productid=<%=productid%>" target="productstock"><%=quantity%></a></td></tr>
+            <tr><td><%=productid%></td><td><%=quantity%></td></tr>
 
             <%
                 }

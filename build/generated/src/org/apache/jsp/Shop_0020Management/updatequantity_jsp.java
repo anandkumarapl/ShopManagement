@@ -80,7 +80,7 @@ public final class updatequantity_jsp extends org.apache.jasper.runtime.HttpJspB
                 try {
                     productid = request.getParameter("productid");
                     quantity = request.getParameter("quantity");
-                    PreparedStatement ps = DbConnect.connect().prepareStatement("update productstock set quantity=? where productid=?");
+                    PreparedStatement ps = DbConnect.connect().prepareStatement("update productstock set quantity = quantity +?  where productid=?");
                     
                     ps.setString(1, quantity);
                     ps.setString(2, productid);
@@ -116,6 +116,7 @@ public final class updatequantity_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("            </center>\r\n");
       out.write("            </body>\r\n");
       out.write("        </form>\r\n");
+      out.write("  <iframe style=\"width: 100%; border-style: none;height: 500px;\" src=\"Allproduct.jsp\"></iframe>\r\n");
       out.write("\r\n");
       out.write("        </html>\r\n");
     } catch (Throwable t) {

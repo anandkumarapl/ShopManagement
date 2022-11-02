@@ -36,8 +36,8 @@
             <li><a class="dropdown-item" href="Products.jsp">Products</a></li>
             <li><a class="dropdown-item" href="productselect.jsp">Product Select</a></li>
             <li><a class="dropdown-item" href="purchase.jsp">Purchase</a></li>
-            <li><a class="dropdown-item" href="#"></a></li>
-            <li><a class="dropdown-item" href="#"></a></li>
+            <li><a class="dropdown-item" href="substock.jsp">Delete Stock</a></li>
+            <li><a class="dropdown-item" href="addstock.jsp">Add Stock</a></li>
             <li><a class="dropdown-item" href="#"></a></li> 
             
             

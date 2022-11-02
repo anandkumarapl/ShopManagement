@@ -105,8 +105,8 @@ public final class Products_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <li><a class=\"dropdown-item\" href=\"Products.jsp\">Products</a></li>\n");
       out.write("            <li><a class=\"dropdown-item\" href=\"productselect.jsp\">Product Select</a></li>\n");
       out.write("            <li><a class=\"dropdown-item\" href=\"purchase.jsp\">Purchase</a></li>\n");
-      out.write("            <li><a class=\"dropdown-item\" href=\"#\"></a></li>\n");
-      out.write("            <li><a class=\"dropdown-item\" href=\"#\"></a></li>\n");
+      out.write("            <li><a class=\"dropdown-item\" href=\"substock.jsp\">Delete Stock</a></li>\n");
+      out.write("            <li><a class=\"dropdown-item\" href=\"addstock.jsp\">Add Stock</a></li>\n");
       out.write("            <li><a class=\"dropdown-item\" href=\"#\"></a></li> \n");
       out.write("            \n");
       out.write("            \n");
@@ -220,7 +220,7 @@ public final class Products_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </center>\n");
       out.write("            </body>\n");
       out.write("        </form>\n");
-      out.write("        <iframe style=\"width: 100%; border-style: none;height: 500px;\" src=\"productstock.jsp\"></iframe>\n");
+      out.write("        <iframe style=\"width: 100%; border-style: none;height: 500px;\" src=\"productlist.jsp\"></iframe>\n");
       out.write("\n");
       out.write("        </html>\n");
       out.write("        ");

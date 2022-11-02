@@ -27,17 +27,27 @@
             } else {
                 ispostback = true;
             }
-            String productid = "",quantity="",result = "";
+            String productid = "", productname = "", price = "", description = "", discount = "", unitofmeasurement = "", productcategory = "", result = "";
             System.out.println(ispostback);
 
             if (ispostback) {
                 try {
                     productid = request.getParameter("productid");
-                    quantity = request.getParameter("quantity");
-                    PreparedStatement ps = DbConnect.connect().prepareStatement("update productstock set quantity=? where productid=?");                   
-                    ps.setString(1, quantity);
-                    ps.setString(2, productid);
-                   
+                    productname = request.getParameter("productname");
+                    price = request.getParameter("price");
+                    description = request.getParameter("description");
+                    discount = request.getParameter("discount");
+                    unitofmeasurement = request.getParameter("unitofmeasurement");
+                    productcategory = request.getParameter("productcategory");
+                    PreparedStatement ps = DbConnect.connect().prepareStatement("update products set productname=?,price=?,description=?,discount=?,unitofmeasurement=?,productcategory=? where productid=?");
+                    
+                    ps.setString(1, productname);
+                    ps.setString(2, price);
+                    ps.setString(3, description);
+                    ps.setString(4, discount);
+                    ps.setString(5, unitofmeasurement);
+                    ps.setString(6, productcategory);
+                    ps.setString(7, productid);
                     int n = ps.executeUpdate();
                     result = "Update " + n + " records";
                 } catch (Exception ex) {
@@ -48,14 +58,24 @@
         %>
 
     <center>
-        <h1>Update Purchase</h1>
+        <h1>Update Stock</h1>
         <form>
             <h3><%=result%></h3>
             <input type="hidden" name="check" value="1">
             <label>Product Id</label>
             <input value="<%=productid%>" name="productid" type="number"min="1"><br>
-            <label>Quantity</label>
-            <input name="quantity" value="<%=quantity%>" type="text"><br>
+            <label>Product Name</label>
+            <input name="productname" value="<%=productname%>" type="text"><br>
+            <label>Price</label>
+            <input name="price" value="<%=price%>" type="number"min="1"><br>
+            <label>Description</label>
+            <input name="description" value="<%=description%>" type="text"><br>
+            <label>Discount</label>
+            <input name="discount" value="<%=discount%>" type="text"><br>
+            <label>UnitOfMeasurement</label>
+            <input name="unitofmeasurement" value="<%=unitofmeasurement%>" type="text"><br>
+            <label>Product Category</label>
+            <input name="productcategory" value="<%=productcategory%>" type="text"><br>
             <br>
             <br>
             <label> </label>

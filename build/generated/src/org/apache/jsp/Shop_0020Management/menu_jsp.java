@@ -79,8 +79,8 @@ public final class menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <li><a class=\"dropdown-item\" href=\"Products.jsp\">Products</a></li>\n");
       out.write("            <li><a class=\"dropdown-item\" href=\"productselect.jsp\">Product Select</a></li>\n");
       out.write("            <li><a class=\"dropdown-item\" href=\"purchase.jsp\">Purchase</a></li>\n");
-      out.write("            <li><a class=\"dropdown-item\" href=\"#\"></a></li>\n");
-      out.write("            <li><a class=\"dropdown-item\" href=\"#\"></a></li>\n");
+      out.write("            <li><a class=\"dropdown-item\" href=\"substock.jsp\">Delete Stock</a></li>\n");
+      out.write("            <li><a class=\"dropdown-item\" href=\"addstock.jsp\">Add Stock</a></li>\n");
       out.write("            <li><a class=\"dropdown-item\" href=\"#\"></a></li> \n");
       out.write("            \n");
       out.write("            \n");

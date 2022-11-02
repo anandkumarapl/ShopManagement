@@ -15,7 +15,7 @@
     <body>
     <center>
         <%
-            PreparedStatement statement = DbConnect.connect().prepareStatement("select * from products order by productid");
+            PreparedStatement statement = DbConnect.connect().prepareStatement("select * from productstock");
             ResultSet rs = statement.executeQuery();
             ResultSetMetaData rsmd = rs.getMetaData();
             int n = rsmd.getColumnCount();

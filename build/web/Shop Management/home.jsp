@@ -53,14 +53,5 @@
   </button> 
         </div>
         </div>
-            <style>
-           .form
-           {
-               height: 30px
-           }
-            </style>
-            <center>
-            
-             </center>
             </div>
          <%@include file="footer.jsp" %>

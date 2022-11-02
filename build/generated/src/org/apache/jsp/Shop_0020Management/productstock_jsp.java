@@ -63,7 +63,7 @@ public final class productstock_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("    <center>\n");
       out.write("        ");
 
-            PreparedStatement statement = DbConnect.connect().prepareStatement("select * from products order by productid");
+            PreparedStatement statement = DbConnect.connect().prepareStatement("select * from productstock");
             ResultSet rs = statement.executeQuery();
             ResultSetMetaData rsmd = rs.getMetaData();
             int n = rsmd.getColumnCount();

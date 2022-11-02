@@ -85,7 +85,7 @@
             </center>
             </body>
         </form>
-        <iframe style="width: 100%; border-style: none;height: 500px;" src="productstock.jsp"></iframe>
+        <iframe style="width: 100%; border-style: none;height: 500px;" src="productlist.jsp"></iframe>
 
         </html>
         <%@include file="footer.jsp" %>

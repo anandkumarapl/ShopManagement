@@ -73,17 +73,27 @@ public final class updatestock_jsp extends org.apache.jasper.runtime.HttpJspBase
             } else {
                 ispostback = true;
             }
-            String productid = "",quantity="",result = "";
+            String productid = "", productname = "", price = "", description = "", discount = "", unitofmeasurement = "", productcategory = "", result = "";
             System.out.println(ispostback);
 
             if (ispostback) {
                 try {
                     productid = request.getParameter("productid");
-                    quantity = request.getParameter("quantity");
-                    PreparedStatement ps = DbConnect.connect().prepareStatement("update productstock set quantity=? where productid=?");                   
-                    ps.setString(1, quantity);
-                    ps.setString(2, productid);
-                   
+                    productname = request.getParameter("productname");
+                    price = request.getParameter("price");
+                    description = request.getParameter("description");
+                    discount = request.getParameter("discount");
+                    unitofmeasurement = request.getParameter("unitofmeasurement");
+                    productcategory = request.getParameter("productcategory");
+                    PreparedStatement ps = DbConnect.connect().prepareStatement("update products set productname=?,price=?,description=?,discount=?,unitofmeasurement=?,productcategory=? where productid=?");
+                    
+                    ps.setString(1, productname);
+                    ps.setString(2, price);
+                    ps.setString(3, description);
+                    ps.setString(4, discount);
+                    ps.setString(5, unitofmeasurement);
+                    ps.setString(6, productcategory);
+                    ps.setString(7, productid);
                     int n = ps.executeUpdate();
                     result = "Update " + n + " records";
                 } catch (Exception ex) {
@@ -95,7 +105,7 @@ public final class updatestock_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("    <center>\n");
-      out.write("        <h1>Update Purchase</h1>\n");
+      out.write("        <h1>Update Stock</h1>\n");
       out.write("        <form>\n");
       out.write("            <h3>");
       out.print(result);
@@ -105,9 +115,29 @@ public final class updatestock_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <input value=\"");
       out.print(productid);
       out.write("\" name=\"productid\" type=\"number\"min=\"1\"><br>\n");
-      out.write("            <label>Quantity</label>\n");
-      out.write("            <input name=\"quantity\" value=\"");
-      out.print(quantity);
+      out.write("            <label>Product Name</label>\n");
+      out.write("            <input name=\"productname\" value=\"");
+      out.print(productname);
+      out.write("\" type=\"text\"><br>\n");
+      out.write("            <label>Price</label>\n");
+      out.write("            <input name=\"price\" value=\"");
+      out.print(price);
+      out.write("\" type=\"number\"min=\"1\"><br>\n");
+      out.write("            <label>Description</label>\n");
+      out.write("            <input name=\"description\" value=\"");
+      out.print(description);
+      out.write("\" type=\"text\"><br>\n");
+      out.write("            <label>Discount</label>\n");
+      out.write("            <input name=\"discount\" value=\"");
+      out.print(discount);
+      out.write("\" type=\"text\"><br>\n");
+      out.write("            <label>UnitOfMeasurement</label>\n");
+      out.write("            <input name=\"unitofmeasurement\" value=\"");
+      out.print(unitofmeasurement);
+      out.write("\" type=\"text\"><br>\n");
+      out.write("            <label>Product Category</label>\n");
+      out.write("            <input name=\"productcategory\" value=\"");
+      out.print(productcategory);
       out.write("\" type=\"text\"><br>\n");
       out.write("            <br>\n");
       out.write("            <br>\n");

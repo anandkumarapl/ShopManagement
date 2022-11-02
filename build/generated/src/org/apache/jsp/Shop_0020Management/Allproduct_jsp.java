@@ -58,10 +58,10 @@ public final class Allproduct_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("    <center>\n");
-      out.write("        <h1>All Producrt</h1>\n");
+      out.write("        <h1>All Product</h1>\n");
       out.write("        ");
 
-            PreparedStatement ps = DbConnect.connect().prepareStatement("select * from productstock order by productid");
+            PreparedStatement ps = DbConnect.connect().prepareStatement("select productname, quantity from productstock st join products p on st.productid = p.productid order by productname ");
             ResultSet rs = ps.executeQuery();
         
       out.write("\n");
@@ -73,17 +73,15 @@ public final class Allproduct_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            ");
 
                 while (rs.next()) {
-                    String productid = "" + rs.getObject("productid");
+                    String productid = "" + rs.getObject("productname");
                     String quantity = "" + rs.getObject("quantity");
             
       out.write("\n");
       out.write("            <tr><td>");
       out.print(productid);
-      out.write("</td><td><a href=\"Allproduct.jsp?productid=");
-      out.print(productid);
-      out.write("\" target=\"productstock\">");
+      out.write("</td><td>");
       out.print(quantity);
-      out.write("</a></td></tr>\n");
+      out.write("</td></tr>\n");
       out.write("\n");
       out.write("            ");
 
