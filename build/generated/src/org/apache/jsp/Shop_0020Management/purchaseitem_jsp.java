@@ -3,7 +3,7 @@ package org.apache.jsp.Shop_0020Management;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import components.SelectBoxes;
+import components.Utilities;
 import java.sql.ResultSet;
 import database.DbConnect;
 import java.sql.PreparedStatement;
@@ -120,7 +120,7 @@ public final class purchaseitem_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.print(receiptno);
       out.write("\" autocomplete=\"off\" name=\"reciptno\" type=\"number\"><br>\n");
       out.write("            productid");
-      out.print(SelectBoxes.getProductsList("4", "productid"));
+      out.print(Utilities.getProductsList("4", "productid"));
       out.write("<br>\n");
       out.write("            quantity<input value=\"");
       out.print(quantity);
@@ -132,7 +132,8 @@ public final class purchaseitem_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\n");
       out.write("        </form>\n");
       out.write("           \n");
-      out.write("                \n");
+      out.write("   <iframe style=\"width: 100%; border-style: none;height: 500px;\" src=\"productstock.jsp\"></iframe>\n");
+      out.write("\n");
       out.write("                \n");
       out.write("            </select>\n");
       out.write("    </body>\n");

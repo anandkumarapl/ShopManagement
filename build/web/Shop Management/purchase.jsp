@@ -1,4 +1,4 @@
-<%@page import="components.SelectBoxes"%>
+<%@page import="components.Utilities"%>
 <%@page import="java.sql.Date"%>
 <%@page import="java.util.function.Supplier"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>purchase</title>
-                        <%@include file="menu.jsp" %>
+      <%@include file="menu.jsp" %>
 
     </head>
     <body>
@@ -53,7 +53,7 @@
                     ps.setString(9, remarks);
                     int n = ps.executeUpdate();
                     result = "Inserted " + " records";
-                    String newreceiptno=SelectBoxes.getNewReceiptId();
+                    String newreceiptno=Utilities.getNewReceiptId();
                     response.sendRedirect("purchaseitem.jsp?receiptno=" + newreceiptno);
                 } catch (Exception ex) {
                     System.out.println(ex);

@@ -86,4 +86,6 @@
         </center>
     </body>
         </form>
+                <iframe style="width: 100%; border-style: none;height: 500px;" src="productslist1.jsp"></iframe>
+
 </html>

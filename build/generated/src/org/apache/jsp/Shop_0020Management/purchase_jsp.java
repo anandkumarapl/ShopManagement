@@ -3,7 +3,7 @@ package org.apache.jsp.Shop_0020Management;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import components.SelectBoxes;
+import components.Utilities;
 import java.sql.Date;
 import java.util.function.Supplier;
 import java.sql.PreparedStatement;
@@ -71,7 +71,7 @@ public final class purchase_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>purchase</title>\n");
-      out.write("                        ");
+      out.write("      ");
       out.write("<div>\n");
       out.write("    <nav class=\"navbar navbar-expand-lg bg-light\">\n");
       out.write("  <div class=\"container-fluid\">\n");
@@ -110,8 +110,8 @@ public final class purchase_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <li><a class=\"dropdown-item\" href=\"Products.jsp\">Products</a></li>\n");
       out.write("            <li><a class=\"dropdown-item\" href=\"productselect.jsp\">Product Select</a></li>\n");
       out.write("            <li><a class=\"dropdown-item\" href=\"purchase.jsp\">Purchase</a></li>\n");
-      out.write("            <li><a class=\"dropdown-item\" href=\"#\"></a></li>\n");
-      out.write("            <li><a class=\"dropdown-item\" href=\"#\"></a></li>\n");
+      out.write("            <li><a class=\"dropdown-item\" href=\"substock.jsp\">Delete Stock</a></li>\n");
+      out.write("            <li><a class=\"dropdown-item\" href=\"addstock.jsp\">Add Stock</a></li>\n");
       out.write("            <li><a class=\"dropdown-item\" href=\"#\"></a></li> \n");
       out.write("            \n");
       out.write("            \n");
@@ -173,7 +173,7 @@ public final class purchase_jsp extends org.apache.jasper.runtime.HttpJspBase
                     ps.setString(9, remarks);
                     int n = ps.executeUpdate();
                     result = "Inserted " + " records";
-                    String newreceiptno=SelectBoxes.getNewReceiptId();
+                    String newreceiptno=Utilities.getNewReceiptId();
                     response.sendRedirect("purchaseitem.jsp?receiptno=" + newreceiptno);
                 } catch (Exception ex) {
                     System.out.println(ex);

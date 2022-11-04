@@ -1,4 +1,4 @@
-<%@page import="components.SelectBoxes"%>
+<%@page import="components.Utilities"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="javax.naming.spi.DirStateFactory.Result"%>
 <%@page import="database.DbConnect"%>
@@ -31,7 +31,7 @@
                 
                 
             </select>
-                <%=SelectBoxes.getProductsList("4", "productslist")%>
+                <%=Utilities.getProductsList("4", "productslist")%>
         <select name="month">
             
             <option value="1"> jan</option>

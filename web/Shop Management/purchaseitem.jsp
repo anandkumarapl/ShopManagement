@@ -1,4 +1,4 @@
-<%@page import="components.SelectBoxes"%>
+<%@page import="components.Utilities"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="database.DbConnect"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -66,14 +66,15 @@
             <input type="hidden"  name="check" value="1"><br>
            
             receiptno<input value="<%=receiptno%>" autocomplete="off" name="reciptno" type="number"><br>
-            productid<%=SelectBoxes.getProductsList("4", "productid")%><br>
+            productid<%=Utilities.getProductsList("4", "productid")%><br>
             quantity<input value="<%=quantity%>" autocomplete="off" name="quantity" type="number"><br>
             price<input value="<%=price%>" autocomplete="off" name="price" type="number"><br>
             <input name="option" type="submit">
 
         </form>
            
-                
+   <iframe style="width: 100%; border-style: none;height: 500px;" src="productstock.jsp"></iframe>
+
                 
             </select>
     </body>

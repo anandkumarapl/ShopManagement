@@ -64,7 +64,7 @@ public final class productlist_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("        ");
 
-            PreparedStatement statement = DbConnect.connect().prepareStatement("select PRODUCTNAME  ,PRICE	,DESCRIPTION,	DISCOUNT,	UNITOFMEASUREMENT,	PRODUCTCATEGORY  from products order by productid desc");
+            PreparedStatement statement = DbConnect.connect().prepareStatement("select productid , PRODUCTNAME  ,PRICE	,DESCRIPTION,	DISCOUNT,	UNITOFMEASUREMENT,	PRODUCTCATEGORY  from products order by productid desc");
             ResultSet rs = statement.executeQuery();
             ResultSetMetaData rsmd = rs.getMetaData();
             int n = rsmd.getColumnCount();
